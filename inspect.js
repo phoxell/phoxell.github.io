@@ -18,11 +18,11 @@ function go(){
 }
 
 function handleCharacteristicValueChanged(event) {
-    var value = event.target.value;
-    d0.innerHTML='[0] '+value[0];
-    d1.innerHTML='[1] '+value[1];
-    d2.innerHTML='[2] '+value[2];
-    d3.innerHTML='[3] '+value[3];
+    var d = event.target.value;
+    d0.innerHTML='[0] '+d;
+    d1.innerHTML='[1] ';//+d[1];
+    d2.innerHTML='[2] ';//+d[2];
+    d3.innerHTML='[3] ';//+d[3];
 }
 
 function search(){
