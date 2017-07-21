@@ -4,6 +4,10 @@ let d2=document.getElementById('d2');
 let d3=document.getElementById('d3');
 
 function go(){
+    d0.innerHTML='0]';
+    d1.innerHTML='1]';
+    d2.innerHTML='2]';
+    d3.innerHTML='3]';
     navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
     .then(device => device.gatt.connect())
     .then(server => server.getPrimaryService('00000000-0000-1000-8000-00805f9b34fb'))
