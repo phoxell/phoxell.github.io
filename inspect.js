@@ -36,24 +36,24 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var d = event.target.value;
-    d0.innerHTML='[0] '+d.getInt8(0);
-    d1.innerHTML='[1] '+d.getInt8(1);
-    d2.innerHTML='[2] '+d.getInt8(2);
-    d3.innerHTML='[3] '+d.getInt8(3);
-    d0.innerHTML='[4] '+d.getInt8(4);
-    d1.innerHTML='[5] '+d.getInt8(5);
-    d2.innerHTML='[6] '+d.getInt8(6);
-    d3.innerHTML='[7] '+d.getInt8(7);
-    d0.innerHTML='[8] '+d.getInt8(8);
-    d1.innerHTML='[9] '+d.getInt8(9);
-    d0.innerHTML='[10] '+d.getInt8(10);
-    d1.innerHTML='[11] '+d.getInt8(11);
-    d2.innerHTML='[12] '+d.getInt8(12);
-    d3.innerHTML='[13] '+d.getInt8(13);
-    d0.innerHTML='[14] '+d.getInt8(14);
-    d1.innerHTML='[15] '+d.getInt8(15);
-    d2.innerHTML='[16] '+d.getInt8(16);
-    d3.innerHTML='[17] '+d.getInt8(17);
-    d0.innerHTML='[18] '+d.getInt8(18);
-    d1.innerHTML='[19] '+d.getInt8(19);
+    d00.innerHTML='[0] '+d.getInt8(0);
+    d01.innerHTML='[1] '+d.getInt8(1);
+    d02.innerHTML='[2] '+d.getInt8(2);
+    d03.innerHTML='[3] '+d.getInt8(3);
+    d04.innerHTML='[4] '+d.getInt8(4);
+    d05.innerHTML='[5] '+d.getInt8(5);
+    d06.innerHTML='[6] '+d.getInt8(6);
+    d07.innerHTML='[7] '+d.getInt8(7);
+    d08.innerHTML='[8] '+d.getInt8(8);
+    d09.innerHTML='[9] '+d.getInt8(9);
+    d10.innerHTML='[10] '+d.getInt8(10);
+    d11.innerHTML='[11] '+d.getInt8(11);
+    d12.innerHTML='[12] '+d.getInt8(12);
+    d13.innerHTML='[13] '+d.getInt8(13);
+    d14.innerHTML='[14] '+d.getInt8(14);
+    d15.innerHTML='[15] '+d.getInt8(15);
+    d16.innerHTML='[16] '+d.getInt8(16);
+    d17.innerHTML='[17] '+d.getInt8(17);
+    d18.innerHTML='[18] '+d.getInt8(18);
+    d19.innerHTML='[19] '+d.getInt8(19);
 }
