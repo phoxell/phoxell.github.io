@@ -23,8 +23,8 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var d = event.target.value;
-    d0.innerHTML='[0] '+d;
-    d1.innerHTML='[1] '+d[1];
-    d2.innerHTML='[2] '+d[2];
-    d3.innerHTML='[3] '+d[3];
+    d0.innerHTML='[0] '+d.getInt8(0);
+    d1.innerHTML='[1] '+d.getInt8(1);
+    d2.innerHTML='[2] '+d.getInt8(2);
+    d3.innerHTML='[3] '+d.getInt8(3);
 }
