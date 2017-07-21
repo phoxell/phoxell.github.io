@@ -1,7 +1,7 @@
-d0=document.getElementById('d0');
-d1=document.getElementById('d1');
-d2=document.getElementById('d2');
-d3=document.getElementById('d3');
+let d0=document.getElementById('d0');
+let d1=document.getElementById('d1');
+let d2=document.getElementById('d2');
+let d3=document.getElementById('d3');
 
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
