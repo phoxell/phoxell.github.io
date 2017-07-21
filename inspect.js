@@ -36,16 +36,16 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var d = event.target.value;
-    d00.innerHTML='[0] '+d.getInt8(0);
-    d01.innerHTML='[1] '+d.getInt8(1);
-    d02.innerHTML='[2] '+d.getInt8(2);
-    d03.innerHTML='[3] '+d.getInt8(3);
-    d04.innerHTML='[4] '+d.getInt8(4);
-    d05.innerHTML='[5] '+d.getInt8(5);
-    d06.innerHTML='[6] '+d.getInt8(6);
-    d07.innerHTML='[7] '+d.getInt8(7);
-    d08.innerHTML='[8] '+d.getInt8(8);
-    d09.innerHTML='[9] '+d.getInt8(9);
+    d00.innerHTML='[00] '+d.getInt8(0);
+    d01.innerHTML='[01] '+d.getInt8(1);
+    d02.innerHTML='[02] '+d.getInt8(2);
+    d03.innerHTML='[03] '+d.getInt8(3);
+    d04.innerHTML='[04] '+d.getInt8(4);
+    d05.innerHTML='[05] '+d.getInt8(5);
+    d06.innerHTML='[06] '+d.getInt8(6);
+    d07.innerHTML='[07] '+d.getInt8(7);
+    d08.innerHTML='[08] '+d.getInt8(8);
+    d09.innerHTML='[09] '+d.getInt8(9);
     d10.innerHTML='[10] '+d.getInt8(10);
     d11.innerHTML='[11] '+d.getInt8(11);
     d12.innerHTML='[12] '+d.getInt8(12);
