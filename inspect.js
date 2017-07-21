@@ -1,7 +1,7 @@
-d0=document.getElementById("d0");
-d1=document.getElementById("d1");
-d2=document.getElementById("d2");
-d3=document.getElementById("d3");
+d0=document.getElementById('d0');
+d1=document.getElementById('d1');
+d2=document.getElementById('d2');
+d3=document.getElementById('d3');
 
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
@@ -18,7 +18,7 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var d = event.target.value;
-    d0.innerHTML='[0] '+d;
+    d0.innerHTML='[0] ';
     d1.innerHTML='[1] ';//+d[1];
     d2.innerHTML='[2] ';//+d[2];
     d3.innerHTML='[3] ';//+d[3];
