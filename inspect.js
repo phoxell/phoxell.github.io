@@ -1,4 +1,7 @@
-let chosenHeartRateService = null;
+d0=document.getElementById("d0");
+d1=document.getElementById("d1");
+d2=document.getElementById("d2");
+d3=document.getElementById("d3");
 
 function go(){
     navigator.bluetooth.requestDevice({ filters: [{ services: ['00000000-0000-1000-8000-00805f9b34fb'] }] })
@@ -16,7 +19,10 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var value = event.target.value;
-    console.log('Received ' + value);
+    d0.innerHTML='[0] '+value[0];
+    d1.innerHTML='[1] '+value[1];
+    d2.innerHTML='[2] '+value[2];
+    d3.innerHTML='[3] '+value[3];
 }
 
 function search(){
