@@ -84,18 +84,22 @@ d16 = document.getElementById('c16');
 d17 = document.getElementById('c17');
 d18 = document.getElementById('c18');
 d19 = document.getElementById('c19');
+
 name=document.getElementById('name');
 
+uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
+uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
+
 function go(){
-    navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
+    navigator.bluetooth.requestDevice({filters:[{services: [uuid_tnnl]}]})
     .then(device => device.gatt.connect())
-    .then(server => server.getPrimaryService("generic_access"))
+    /*.then(server => server.getPrimaryService("generic_access"))
     .then(service => service.getCharacteristic("gap.device_name"))
     .then(characteristic => {
         name.innerHTML = characteristic.readValue();
-    })
-    .then(server => server.optionalServices('00000000-0000-1000-8000-00805f9b34fb'))
-    .then(service => service.getCharacteristic('00000002-0000-1000-8000-00805f9b34fb'))
+    })*/
+    .then(server => server.optionalServices(uuid_tnnl))
+    .then(service => service.getCharacteristic(uuid_down))
     .then(characteristic => characteristic.startNotifications())
     .then(characteristic => {
         characteristic.addEventListener('characteristicvaluechanged',handleCharacteristicValueChanged);
