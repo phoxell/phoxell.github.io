@@ -9,15 +9,15 @@ th{font-size:67%;font-weight:normal;text-align:left;vertical-align:bottom}
 </style>
 <body>
 <table>
-<tr><th>REMOTE NAME<td>&nbsp;<td id="rname" onclick="go()">(Click to scan)
+<tr><th>REMOTE NAME<td>&nbsp;<td id="rmot" onclick="go()">(Click to scan)
 <tr><th>&nbsp;
-<tr><th>CMD_POWER<td><td id="cpwer">
-<tr><th>CMD_TEMPERATURE<td><td id="ctemp">
-<tr><th>CMD_TIMER<td><td id="ctimr">
-<tr><th>CMD_PERIPHERAL<td><td id="cprph">
-<tr><th>CMD_LOADTEST<td><td id="ctest">
-<tr><th>CMD_INDICATOR<td><td id="cindi">
-<tr><th>CMD_MODE<td><td id="cmode">
+<tr><th>CMD_POWER<td><td id="cpwr">
+<tr><th>CMD_TEMPERATURE<td><td id="ctmp">
+<tr><th>CMD_TIMER<td><td id="ctmr">
+<tr><th>CMD_PERIPHERAL<td><td id="cpph">
+<tr><th>CMD_LOADTEST<td><td id="ctst">
+<tr><th>CMD_INDICATOR<td><td id="cind">
+<tr><th>CMD_MODE<td><td id="cmod">
 <tr><th>&nbsp;
 <tr><th>RSP_ERROR<td><td>
 <tr><th>RSP_TEMPERATURE<td><td>
@@ -44,14 +44,14 @@ th{font-size:67%;font-weight:normal;text-align:left;vertical-align:bottom}
 </ul>
 </body>
 <script>
-cindi = document.getElementById('cindi');
-cmode = document.getElementById('cmode');
-cprph = document.getElementById('cprph');
-cpwer = document.getElementById('cpwer');
-ctemp = document.getElementById('ctemp');
-ctest = document.getElementById('ctest');
-ctimr = document.getElementById('ctimr');
-rname = document.getElementById('rname');
+cind = document.getElementById('cind');
+cmod = document.getElementById('cmod');
+cpph = document.getElementById('cpph');
+cpwr = document.getElementById('cpwr');
+ctmp = document.getElementById('ctmp');
+ctmr = document.getElementById('ctmr');
+ctst = document.getElementById('ctst');
+rmot = document.getElementById('rname');
 
 uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
 uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
@@ -84,25 +84,25 @@ function handleCharacteristicValueChanged(event) {
         var v = s.getInt8(i++);
         switch(k){
         case 0x22:
-            cpwer.innerHTML = v;
+            cpwr.innerHTML = v;
             break;
         case 0x24:
-            cprph.innerHTML = v;
+            cpph.innerHTML = v;
             break;
         case 0x26:
-            ctest.innerHTML = v;
+            ctst.innerHTML = v;
             break;
         case 0x28:
-            ctimr.innerHTML = v;
+            ctmr.innerHTML = v;
             break;
         case 0x2a:
-            ctemp.innerHTML = v;
+            ctmp.innerHTML = v;
             break;
         case 0x2c:
-            cindi.innerHTML = v;
+            cind.innerHTML = v;
             break;
         case 0x2d:
-            cmode.innerHTML = v;
+            cmod.innerHTML = v;
             break;
         default:
             console.log('k: ' + k + ', v: ' + v);
