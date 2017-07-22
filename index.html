@@ -85,25 +85,6 @@ d17=document.getElementById('c17');
 d18=document.getElementById('c18');
 d19=document.getElementById('c19');
 
-if(navigator.wakeLock){
-    navigator.wakeLock.request("display").then(
-        function successFunction() {
-            d00.innerHTML='wakelock';
-        },
-        function errorFunction() {
-            // error
-        }
-    );
-    /*navigator.wakeLock.request("system").then(
-        function successFunction() {
-            // success
-        },
-        function errorFunction() {
-            // error
-        }
-    );*/
-} else d00.innerHTML='nolock';
-
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
     .then(device => device.gatt.connect())
