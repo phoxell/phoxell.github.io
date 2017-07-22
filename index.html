@@ -93,7 +93,7 @@ uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: [uuid_tnnl]}]})
     .then(device => {
-        //name.innerHTML = device.name;
+        name.innerHTML = device.name;
         return device.gatt.connect();
     })
     .then(server => server.getPrimaryService(uuid_tnnl))
