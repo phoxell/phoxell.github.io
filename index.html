@@ -88,7 +88,7 @@ d19=document.getElementById('c19');
 if(navigator.wakeLock){
     navigator.wakeLock.request("display").then(
         function successFunction() {
-            d00.innerHTML='Ok';
+            d00.innerHTML='wakelock';
         },
         function errorFunction() {
             // error
@@ -102,7 +102,8 @@ if(navigator.wakeLock){
             // error
         }
     );*/
-};
+} else d00.innerHTML='nolock';
+
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: ['00000000-0000-1000-8000-00805f9b34fb']}]})
     .then(device => device.gatt.connect())
