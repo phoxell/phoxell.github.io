@@ -98,12 +98,12 @@ function go(){
     })
     .then(server => {
         console.log('server.getPrimaryService');
-        server.getPrimaryService(uuid_tnnl);
+        return server.getPrimaryService(uuid_tnnl);
     })
     .then(service => service.getCharacteristic(uuid_down))
     .then(characteristic => characteristic.startNotifications())
     .then(characteristic => {
-        characteristic.addEventListener('characteristicvaluechanged',handleCharacteristicValueChanged);
+        characteristic.addEventListener('characteristicvaluechanged', handleCharacteristicValueChanged);
         console.log('Notifications have been started.');
     })
     .catch(error => { console.log(error); });
