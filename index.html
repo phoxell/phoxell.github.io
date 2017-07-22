@@ -11,7 +11,7 @@ th{font-size:67%;font-weight:normal;text-align:left;vertical-align:bottom}
 <table>
 <tr><th>REMOTE NAME<td>&nbsp;<td id="rname" onclick="go()">(Click to scan)
 <tr><th>&nbsp;
-<tr><th>CMD_POWER<td><td>
+<tr><th>CMD_POWER<td><td id="cpwer">
 <tr><th>CMD_TEMPERATURE<td><td>
 <tr><th>CMD_TIMER<td><td>
 <tr><th>CMD_PERIPHERAL<td><td>
@@ -88,6 +88,7 @@ d17 = document.getElementById('c17');
 d18 = document.getElementById('c18');
 d19 = document.getElementById('c19');
 
+cpwer = document.getElementById('cpwer');
 rname = document.getElementById('rname');
 
 uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
@@ -115,6 +116,7 @@ function go(){
 
 function handleCharacteristicValueChanged(event) {
     var d = event.target.value;
+    cpwer.innerHTML = d.byteLength;
     d00.innerHTML = '[00] ' + d.getInt8(0);
     d01.innerHTML = '[01] ' + d.getInt8(1);
     d02.innerHTML = '[02] ' + d.getInt8(2);
