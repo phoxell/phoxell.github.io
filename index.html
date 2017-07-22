@@ -94,7 +94,7 @@ function go(){
     navigator.bluetooth.requestDevice({filters:[{services: [uuid_tnnl]}]})
     .then(device => {
         name.innerHTML = device.name;
-        device.gatt.connect();
+        return device.gatt.connect();
     })
     .then(server => server.getPrimaryService(uuid_tnnl))
     .then(service => service.getCharacteristic(uuid_down))
