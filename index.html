@@ -92,12 +92,10 @@ uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
 
 function go(){
     navigator.bluetooth.requestDevice({filters:[{services: [uuid_tnnl]}]})
-    .then(device => device.gatt.connect())
-    /*.then(server => server.getPrimaryService("generic_access"))
-    .then(service => service.getCharacteristic("gap.device_name"))
-    .then(characteristic => {
-        name.innerHTML = characteristic.readValue();
-    })*/
+    .then(device => {
+        name.innerHTML = device.name;
+        device.gatt.connect();
+    })
     .then(server => server.getPrimaryService(uuid_tnnl))
     .then(service => service.getCharacteristic(uuid_down))
     .then(characteristic => characteristic.startNotifications())
