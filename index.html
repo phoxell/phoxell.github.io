@@ -94,7 +94,7 @@ function go(){
     .then(characteristic => {
         name.innerHTML = characteristic.readValue();
     })
-    .then(server => server.getPrimaryService('00000000-0000-1000-8000-00805f9b34fb'))
+    .then(server => server.optionalServices('00000000-0000-1000-8000-00805f9b34fb'))
     .then(service => service.getCharacteristic('00000002-0000-1000-8000-00805f9b34fb'))
     .then(characteristic => characteristic.startNotifications())
     .then(characteristic => {
