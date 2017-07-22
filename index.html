@@ -6,7 +6,7 @@
 <body>
 <table>
 <tr><td>REMOTE ADDR<td>&nbsp;<td onclick="go()">(Click to scan)
-<tr><td>REMOTE NAME<td><td><span id="name"></span>
+<tr><td>REMOTE NAME<td><td><span id="rname"></span>
 <tr><td>&nbsp;
 <tr><td>CMD_POWER<td><td>
 <tr><td>CMD_TEMPERATURE<td><td>
@@ -85,7 +85,7 @@ d17 = document.getElementById('c17');
 d18 = document.getElementById('c18');
 d19 = document.getElementById('c19');
 
-name = document.getElementById('name');
+rname = document.getElementById('rname');
 
 uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
 uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
@@ -110,7 +110,7 @@ function go(){
 }
 
 function handleCharacteristicValueChanged(event) {
-    name.innerHTML = 'device.name';
+    rname.innerHTML = 'device.name';
     console.log(device.name);
 
     var d = event.target.value;
