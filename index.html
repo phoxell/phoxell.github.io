@@ -230,16 +230,31 @@ function handleCharacteristicValueChanged(event) {
             rpls.innerHTML = hpls + lpls;
             break;
         case 0x72:
-            rcol.innerHTML = v;
+            lcol = v;
+            rcol.innerHTML = hcol + lcol;
+            break;
+        case 0x73:
+            hcol = v << 8;
+            rcol.innerHTML = hcol + lcol;
             break;
         case 0x74:
             rtop.innerHTML = v;
             break;
         case 0x76:
-            rver.innerHTML = v;
+            lver = v;
+            rver.innerHTML = hver + lver;
+            break;
+        case 0x77:
+            hver = v << 8;
+            rver.innerHTML = hver + lver;
             break;
         case 0x78:
-            renv.innerHTML = v;
+            lenv = v;
+            renv.innerHTML = henv + lenv;
+            break;
+        case 0x79:
+            henv = v << 8;
+            renv.innerHTML = henv + lenv;
             break;
         case 0x7e:
             rbtn.innerHTML = v;
