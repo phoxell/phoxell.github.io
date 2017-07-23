@@ -187,22 +187,47 @@ function handleCharacteristicValueChanged(event) {
             rvol.innerHTML = hvol + lvol;
             break;
         case 0x66:
-            rcur.innerHTML = v;
+            lcur = v;
+            rcur.innerHTML = hcur + lcur;
+            break;
+        case 0x67:
+            hcur = v << 8;
+            rcur.innerHTML = hcur + lcur;
             break;
         case 0x68:
-            rtpr.innerHTML = v;
+            ltpr = v;
+            rtpr.innerHTML = htpr + ltpr;
+            break;
+        case 0x69:
+            htpr = v << 8;
+            rtpr.innerHTML = htpr + ltpr;
             break;
         case 0x6a:
             rtst.innerHTML = v;
             break;
         case 0x6c:
-            rsnk.innerHTML = v;
+            lsnk = v;
+            rsnk.innerHTML = hsnk + lsnk;
+            break;
+        case 0x6d:
+            hsnk = v << 8;
+            rsnk.innerHTML = hsnk + lsnk;
             break;
         case 0x6e:
-            rclk.innerHTML = v;
+            lclk = v;
+            rclk.innerHTML = hclk + lclk;
+            break;
+        case 0x6f:
+            hclk = v << 8;
+            rclk.innerHTML = hclk + lclk;
             break;
         case 0x70:
-            rpls.innerHTML = v;
+            lpls = v;
+            rpls.innerHTML = hpls + lpls;
+            break;
+        case 0x71:
+            hpls = v << 8;
+            rpls.innerHTML = hpls + lpls;
             break;
         case 0x72:
             rcol.innerHTML = v;
