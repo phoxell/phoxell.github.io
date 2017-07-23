@@ -20,7 +20,7 @@ th{font-size:67%;font-weight:normal;text-align:left;vertical-align:bottom}
 <tr><th>CMD_MODE<td><td id="cmod">&nbsp;
 <tr><th>&nbsp;
 <tr><th>RSP_ERROR<td><td id="rerr">&nbsp;
-<tr><th>RSP_TEMPERATURE<td><td id="rtmp">&nbsp;
+<tr><th>RSP_TEMPERATURE<td><td id="rtpr">&nbsp;
 <tr><th>RSP_BUTTON<td><td id="rbtn">&nbsp;
 <tr><th>RSP_KNOB<td><td id="rknb">&nbsp;
 <tr><th>&nbsp;
@@ -61,11 +61,43 @@ rknb = document.getElementById('rknb');
 rmot = document.getElementById('rmot');
 rpls = document.getElementById('rpls');
 rsnk = document.getElementById('rsnk');
-rtmp = document.getElementById('rtmp');
+rtpr = document.getElementById('rtpr');
 rtop = document.getElementById('rtop');
 rtst = document.getElementById('rtst');
 rver = document.getElementById('rver');
 rvol = document.getElementById('rvol');
+
+hclk = 0;
+hcol = 0;
+hcur = 0;
+henv = 0;
+herr = 0;
+hknb = 0;
+hpph = 0;
+hpwr = 0;
+hpls = 0;
+hsnk = 0;
+htmp = 0;
+htmr = 0;
+htpr = 0;
+hver = 0;
+hvol = 0;
+
+lclk = 0;
+lcol = 0;
+lcur = 0;
+lenv = 0;
+lerr = 0;
+lknb = 0;
+lpph = 0;
+lpwr = 0;
+lpls = 0;
+lsnk = 0;
+ltmp = 0;
+ltmr = 0;
+ltpr = 0;
+lver = 0;
+lvol = 0;
 
 uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
 uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
@@ -98,19 +130,39 @@ function handleCharacteristicValueChanged(event) {
         var v = s.getInt8(i++);
         switch(k){
         case 0x22:
-            cpwr.innerHTML = v;
+            lpwr = v;
+            cpwr.innerHTML = hpwr + lpwr;
+            break;
+        case 0x23:
+            hpwr = v << 8;
+            cpwr.innerHTML = hpwr + lpwr;
             break;
         case 0x24:
-            cpph.innerHTML = v;
+            lpph = v;
+            cpph.innerHTML = hpph + lpph;
+            break;
+        case 0x25:
+            hpph = v << 8;
+            cpph.innerHTML = hpph + lpph;
             break;
         case 0x26:
             ctst.innerHTML = v;
             break;
         case 0x28:
-            ctmr.innerHTML = v;
+            ltmr = v;
+            ctmr.innerHTML = htmr + ltmr;
+            break;
+        case 0x29:
+            htmr = v << 8;
+            ctmr.innerHTML = htmr + ltmr;
             break;
         case 0x2a:
-            ctmp.innerHTML = v;
+            ltmp = v;
+            ctmp.innerHTML = htmp + ltmp;
+            break;
+        case 0x2b:
+            htmp = v << 8;
+            ctmp.innerHTML = htmp + ltmp;
             break;
         case 0x2c:
             cind.innerHTML = v;
@@ -119,16 +171,26 @@ function handleCharacteristicValueChanged(event) {
             cmod.innerHTML = v;
             break;
         case 0x62:
-            rerr.innerHTML = v;
+            lerr = v;
+            rerr.innerHTML = herr + lerr;
+            break;
+        case 0x63:
+            herr = v << 8;
+            rerr.innerHTML = herr + lerr;
             break;
         case 0x64:
-            rvol.innerHTML = v;
+            lvol = v;
+            rvol.innerHTML = hvol + lvol;
+            break;
+        case 0x65:
+            hvol = v << 8;
+            rvol.innerHTML = hvol + lvol;
             break;
         case 0x66:
             rcur.innerHTML = v;
             break;
         case 0x68:
-            rtmp.innerHTML = v;
+            rtpr.innerHTML = v;
             break;
         case 0x6a:
             rtst.innerHTML = v;
