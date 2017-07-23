@@ -19,23 +19,23 @@ th{font-size:67%;font-weight:normal;text-align:left;vertical-align:bottom}
 <tr><th>CMD_INDICATOR<td><td id="cind">&nbsp;
 <tr><th>CMD_MODE<td><td id="cmod">&nbsp;
 <tr><th>&nbsp;
-<tr><th>RSP_ERROR<td><td>&nbsp;
-<tr><th>RSP_TEMPERATURE<td><td>&nbsp;
-<tr><th>RSP_BUTTON<td><td>&nbsp;
-<tr><th>RSP_KNOB<td><td>&nbsp;
+<tr><th>RSP_ERROR<td><td id="rerr">&nbsp;
+<tr><th>RSP_TEMPERATURE<td><td id="rtmp">&nbsp;
+<tr><th>RSP_BUTTON<td><td id="rbtn">&nbsp;
+<tr><th>RSP_KNOB<td><td id="rknb">&nbsp;
 <tr><th>&nbsp;
-<tr><th>RSP_CURRENT<td><td>&nbsp;
-<tr><th>RSP_VOLTAGE<td><td>&nbsp;
-<tr><th>RSP_PULSE<td><td>&nbsp;
-<tr><th>RSP_LOADTEST<td><td>&nbsp;
+<tr><th>RSP_CURRENT<td><td id="rcur">&nbsp;
+<tr><th>RSP_VOLTAGE<td><td id="rvol">&nbsp;
+<tr><th>RSP_PULSE<td><td id="rpls">&nbsp;
+<tr><th>RSP_LOADTEST<td><td id="rtst">&nbsp;
 <tr><th>&nbsp;
-<tr><th>RSP_TEMPCOIL<td><td>&nbsp;
-<tr><th>RSP_TEMPENV<td><td>&nbsp;
-<tr><th>RSP_TEMPSINK<td><td>&nbsp;
+<tr><th>RSP_TEMPCOIL<td><td id="rcol">&nbsp;
+<tr><th>RSP_TEMPENV<td><td id="renv">&nbsp;
+<tr><th>RSP_TEMPSINK<td><td id="rsnk">&nbsp;
 <tr><th>&nbsp;
-<tr><th>RSP_CLOCK<td><td>&nbsp;
-<tr><th>RSP_TOPOLOGY<td><td>&nbsp;
-<tr><th>RSP_VERSION<td><td>&nbsp;
+<tr><th>RSP_CLOCK<td><td id="rclk">&nbsp;
+<tr><th>RSP_TOPOLOGY<td><td id="rtop">&nbsp;
+<tr><th>RSP_VERSION<td><td id="rver">&nbsp;
 </table>
 <p>Links
 <ul>
@@ -51,7 +51,21 @@ cpwr = document.getElementById('cpwr');
 ctmp = document.getElementById('ctmp');
 ctmr = document.getElementById('ctmr');
 ctst = document.getElementById('ctst');
+rbtn = document.getElementById('rbtn');
+rclk = document.getElementById('rclk');
+rcol = document.getElementById('rcol');
+rcur = document.getElementById('rcur');
+renv = document.getElementById('renv');
+rerr = document.getElementById('rerr');
+rknb = document.getElementById('rknb');
 rmot = document.getElementById('rmot');
+rpls = document.getElementById('rpls');
+rsnk = document.getElementById('rsnk');
+rtmp = document.getElementById('rtmp');
+rtop = document.getElementById('rtop');
+rtst = document.getElementById('rtst');
+rver = document.getElementById('rver');
+rvol = document.getElementById('rvol');
 
 uuid_tnnl = '00000000-0000-1000-8000-00805f9b34fb';
 uuid_down = '00000002-0000-1000-8000-00805f9b34fb'
@@ -103,6 +117,48 @@ function handleCharacteristicValueChanged(event) {
             break;
         case 0x2d:
             cmod.innerHTML = v;
+            break;
+        case 0x62:
+            rerr.innerHTML = v;
+            break;
+        case 0x64:
+            rvol.innerHTML = v;
+            break;
+        case 0x66:
+            rcur.innerHTML = v;
+            break;
+        case 0x68:
+            rtmp.innerHTML = v;
+            break;
+        case 0x6a:
+            rtst.innerHTML = v;
+            break;
+        case 0x6c:
+            rsnk.innerHTML = v;
+            break;
+        case 0x6e:
+            rclk.innerHTML = v;
+            break;
+        case 0x70:
+            rpls.innerHTML = v;
+            break;
+        case 0x72:
+            rcol.innerHTML = v;
+            break;
+        case 0x74:
+            rtop.innerHTML = v;
+            break;
+        case 0x76:
+            rver.innerHTML = v;
+            break;
+        case 0x78:
+            renv.innerHTML = v;
+            break;
+        case 0x7e:
+            rbtn.innerHTML = v;
+            break;
+        case 0x7f:
+            rknb.innerHTML = v;
             break;
         default:
             console.log('k: ' + k + ', v: ' + v);
